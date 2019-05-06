@@ -1,0 +1,16 @@
+
+
+  <div  class="top-mar">
+    <product-filter [category]="category"></product-filter>
+  </div>
+  <div id="main"  class="container top-mar">
+    <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button><span class='text1'>Filtrar por Categorias</span>
+    <div class="row" *ngIf="cart$ | async as cart">
+        <ng-container *ngFor="let p of filteredProducts; let i = index">
+          <div class="col card-prod">
+            <product-card [product]="p" [shopping-cart]="cart"></product-card>
+          </div>
+          <div *ngIf="(i + 1) % 2 === 0" class="alone-prod w-100"></div>
+        </ng-container>
+      </div>
+  </div>

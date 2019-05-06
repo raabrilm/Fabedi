@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="container">
+        <h1>Pedidos </h1>
+        <div class="card" *ngIf="shipping | async as s" style="width: 80%;">
+            <div class="card-body">
+              <p>
+                 Estos productos son los solicitados en este pedido.
+                
+              </p>
+            </div>
+            <div *ngIf="date | async as d" >{{ d | date}}</div> 
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Valor de Compra</th>
+              </tr>
+            </thead> 
+            <tbody>
+              <tr *ngFor="let item of items | async">
+                <td>{{ item.product.title}}</td> 
+                <td>{{ item.quantity}}</td> 
+                <td>{{ item.totalPrice | currency:'COP':true}}</td> 
+              </tr>
+            </tbody> 
+          </table>
+        
+      </div>
+</div>
+

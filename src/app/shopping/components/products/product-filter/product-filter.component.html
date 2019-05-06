@@ -1,0 +1,22 @@
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-large"
+    onclick="w3_close()">Close &times;</button>
+  <div class="list-group">
+      <a
+        class="list-group-item list-group-item-action"
+        [class.active]="!category"
+        routerLink="/online-shop"
+        >Todas las Categorias</a>
+      <a 
+        *ngFor="let c of categories$ | async" 
+        routerLink="/online-shop/"
+        [queryParams]="{ category: c.$key }"
+        class="list-group-item list-group-item-action"
+        [class.active]="category === c.$key"
+        >
+        {{ c.name }}
+      </a>
+    </div>
+</div>
+

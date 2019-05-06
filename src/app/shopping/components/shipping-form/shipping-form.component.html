@@ -1,0 +1,34 @@
+<form #f="ngForm">
+  <div class="form-group">
+    <label for="">Nombre</label>
+    <input #name="ngModel" name="name" [(ngModel)]="shipping.name" type="text" class="form-control" required>
+    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+      <div *ngIf="name.errors.required">Digite el nombre por favor.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Direccion</label>
+    <input #addressLine1="ngModel" name="addressLine1" [(ngModel)]="shipping.addressLine1" type="text" class="form-control" placeholder="Line 1" required>
+    <div class="alert alert-danger" *ngIf="addressLine1.touched && addressLine1.invalid">
+      <div *ngIf="addressLine1.errors.required">Digite la Direccion por favor.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Telefono</label>
+    <input #telefono="ngModel" name="telefono" [(ngModel)]="shipping.telefono" type="text" class="form-control" placeholder="000 000 000" required>
+    <div class="alert alert-danger" *ngIf="telefono.touched && telefono.invalid">
+      <div *ngIf="telefono.errors.required">Address digite un numero de telefono.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Ciudad</label>
+    <input #city="ngModel" name="city" [(ngModel)]="shipping.city" type="text" class="form-control" required>
+    <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+      <div *ngIf="city.errors.required">Digite la ciudad por favor.</div>
+    </div>
+  </div>
+  <button 
+    [disabled]="!f.valid"
+    (click)="placeOrder()"
+    class="btn btn-primary">Realizar pedido</button>
+</form>    
