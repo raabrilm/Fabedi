@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fabedi Coffee</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+  <app-root>loading...</app-root>
+  <footer id="footer" class="footer text-center">
+    <div class="container">
+      <div class="social">
+        <a target="_blank" href="#" class="fa fa-2x fa-facebook"></a>                <a target="_blank" href="#" class="fa fa-2x fa-instagram"></a>        <a target="_blank" href="#" class="fa fa-2x fa-youtube-play"></a>        <a target="_blank" href="#" class="fa fa-2x fa-linkedin"></a>        <a target="_blank" href="#" class="fa fa-2x fa-whatsapp"></a>
+      </div>     
+    </div>
+    <div class="copy">
+        Copyright © 2019 Created by <a href="http://asesorweb.ga/" target="_blank">RAAM</a><br> Developed by  <a href="http://asesorweb.ga/" target="_blank">RAAM</a>
+      </div>
+  </footer>
+  <script>
+    function w3_open() {
+      $("div#main").toggleClass("container");
+      $("div.alone-prod").toggleClass("w-100");
+      $("div.card-prod").toggleClass("card-prod-in");
+      $("div.card-prod").toggleClass("col");
+      document.getElementById("main").style.marginLeft = "26%";
+      document.getElementById("mySidebar").style.width = "25%";
+      document.getElementById("mySidebar").style.display = "block";
+      document.getElementById("openNav").style.display = 'none';
+    }
+    function w3_close() {
+      $("div#main").toggleClass("container");
+      $("div.alone-prod").toggleClass("w-100");
+      $("div.card-prod").toggleClass("card-prod-in");
+      $("div.card-prod").toggleClass("col");
+      document.getElementById("main").style.marginLeft = "auto";
+      document.getElementById("mySidebar").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+    }
+  </script>
+</body>
+</html>
